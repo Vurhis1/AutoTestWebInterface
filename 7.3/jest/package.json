@@ -4,16 +4,19 @@
   "description": "jest test",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --collectCoverage",
+    "@type": "{import('jest').Config}"
   },
   "keywords": [
     "jest",
     "test",
-    "jsaqa"
+    "jsaqa",
+    "coverage"
   ],
-  "author": "omelnikova",
+  "author": "agofonov",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^27.3.1"
+    "jest": "^27.5.1"
   }
 }
