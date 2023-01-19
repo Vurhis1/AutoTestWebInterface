@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright"
+    "test": "playwright test",
+    "help": "playwright --help"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.12.3",
-    "playwright": "^1.12.3"
+    "playwright": "^1.29.2"
+  },
+  "directories": {
+    "test": "tests"
   }
 }
