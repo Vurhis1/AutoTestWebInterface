@@ -21,12 +21,12 @@ describe("Github page tests", () => {
     return expect(title2).toEqual(
       "GitHub for teams · Build like the best teams on the planet · GitHub"
     );
-  });
+  }, 2000);
 
   test("The first link attribute", async () => {
     const actual = await page.$eval("a", (link) => link.getAttribute("href"));
     return expect(actual).toEqual("#start-of-content");
-  });
+  }, 2000);
 
   test("The page contains Sign in button", async () => {
     const btnSelector = ".btn-large-mktg.btn-mktg";
@@ -36,7 +36,7 @@ describe("Github page tests", () => {
     const actual = await page.$eval(btnSelector, (link) => link.textContent);
     return expect(actual).toContain("Get started with Team");
   });
-});
+}, 2000);
 
 describe("Github page tests 2", () => {
   beforeEach(async () => {
@@ -49,7 +49,7 @@ describe("Github page tests 2", () => {
     await page.waitForSelector("h1");
     const title2 = await page.title();
     return expect(title2).toEqual("GitHub: Let’s build from here · GitHub");
-  });
+  }, 1000);
 
   test("Go to 'Start a free enterprise trial'", async () => {
     const btnSel = await page.$("main div div a");
@@ -57,7 +57,7 @@ describe("Github page tests 2", () => {
     await page.waitForSelector("h1");
     const newTitle = await page.title();
     return expect(newTitle).toEqual("GitHub: Let’s build from here · GitHub");
-  });
+  }, 2000);
 
   test("The page contains 'Sign up for GitHub' button", async () => {
     const btnSelector = ".btn-signup-mktg.btn-mktg";
@@ -66,5 +66,5 @@ describe("Github page tests 2", () => {
     });
     const actual = await page.$eval(btnSelector, (link) => link.textContent);
     return expect(actual).toContain("Sign up for GitHub");
-  });
+  }, 2000);
 });
