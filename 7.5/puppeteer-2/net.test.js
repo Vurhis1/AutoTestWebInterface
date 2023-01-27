@@ -53,3 +53,4 @@ test("Should show warning if login is not email", async () => {
   await page.goto("https://netology.ru/?modal=sign_in");
   await putText(page, 'input[type="email"]', generateName(5));
 });
+body > header > h1;
