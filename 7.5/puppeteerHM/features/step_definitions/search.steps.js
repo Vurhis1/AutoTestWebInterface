@@ -17,25 +17,19 @@ After(async function () {
   }
 });
 
-Given(
-  "buyer is on {string} page",
-  async function (string) {
-    return await this.page.goto(
-      `http://qamid.tmweb.ru/client/index.php${string}`
-    );
-  },
-  60000
-);
+Given("user is on page {string}", { timeout: 10000 }, async function (string) {
+  return await this.page.goto(`${string}`);
+});
 
-When("buyer go to tickets", { timeout: 60000 }, async function () {
+When("buyer go to tickets", { timeout: 10000 }, async function () {
   return await clickElement(
     this.page,
     "body > main > section:nth-child(1) > div.movie-seances__hall > ul > li > a"
   );
 });
 
-Then("buyer sees tickets on the film {string}", async function () {
-  const actual = await getText(this.page, "h2");
-  const expected = "Логан";
-  return expect(actual).toContains(expected);
+Then("user sees text {string}", { timeout: 10000 }, async function (string) {
+  const actual = await getText(this.page, "p.buying__info-start");
+  const expected = await string;
+  expect(actual).contains(expected);
 });
