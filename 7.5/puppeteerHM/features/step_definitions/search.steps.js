@@ -21,15 +21,62 @@ Given("user is on page {string}", { timeout: 10000 }, async function (string) {
   return await this.page.goto(`${string}`);
 });
 
-When("buyer go to tickets", { timeout: 10000 }, async function () {
+When("user select new date", { timeout: 10000 }, async function () {
+  return await clickElement(this.page, "body > nav > a:nth-child(4)");
+});
+
+When("user go to tickets", { timeout: 10000 }, async function () {
   return await clickElement(
     this.page,
     "body > main > section:nth-child(1) > div.movie-seances__hall > ul > li > a"
   );
 });
 
-Then("user sees text {string}", { timeout: 10000 }, async function (string) {
-  const actual = await getText(this.page, "p.buying__info-start");
-  const expected = await string;
-  expect(actual).contains(expected);
+When("user go to tickets second film", { timeout: 10000 }, async function () {
+  return await clickElement(
+    this.page,
+    "body > main > section:nth-child(2) > div.movie-seances__hall > ul > li > a"
+  );
+});
+
+When("user select a ticket", { timeout: 10000 }, async function () {
+  return await clickElement(this.page, "div:nth-child(2) > span:nth-child(1)");
+});
+
+When(
+  "user select a ticket film Hercules",
+  { timeout: 10000 },
+  async function () {
+    return await clickElement(
+      this.page,
+      "div:nth-child(7) > span:nth-child(3)"
+    );
+  }
+);
+
+When("user click on the button", { timeout: 10000 }, async function () {
+  return await clickElement(this.page, "button.acceptin-button");
+});
+
+Then(
+  "user sees text film {string}",
+  { timeout: 10000 },
+  async function (string) {
+    const actual = await getText(
+      this.page,
+      "body > main > section > div > p:nth-child(1) > span"
+    );
+    const expected = await string;
+    expect(actual).contains(expected);
+  }
+);
+
+Then("user cannot buying chair taken", { timeout: 10000 }, async function () {
+  expect(
+    String(
+      await page.$eval("button", (button) => {
+        return button.disabled;
+      })
+    )
+  ).toContain("true");
 });
