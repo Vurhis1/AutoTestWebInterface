@@ -5,7 +5,7 @@ Feature: Buying a tickets
         When user go to tickets
         When user select a ticket
         When user click on the button
-        Then user sees text film "Логан"
+        Then user sees text film
 
     Scenario: Ticket booking happy path film 'Фильм 3'
         Given user is on page "http://qamid.tmweb.ru/client/index.php"
@@ -13,7 +13,7 @@ Feature: Buying a tickets
         When user go to tickets second film
         When user select a ticket film Hercules
         When user click on the button
-        Then user sees text second film "Фильм 3"
+        Then user sees text second film
 
     Scenario: Ticket booking sad path
         Given user is on page "http://qamid.tmweb.ru/client/index.php"
