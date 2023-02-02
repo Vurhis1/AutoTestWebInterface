@@ -58,23 +58,18 @@ When("user click on the button", { timeout: 10000 }, async function () {
   return await clickElement(this.page, "button.acceptin-button");
 });
 
-Then("user sees text film", { timeout: 10000 }, async function () {
-  const actual = await getText(
-    this.page,
-    "body > main > section > div > p:nth-child(1) > span"
-  );
-  const expected = "Логан";
-  expect(actual).contains(expected);
-});
-
-Then("user sees text second film", { timeout: 10000 }, async function () {
-  const actual = await getText(
-    this.page,
-    "body > main > section > div > p:nth-child(1) > span"
-  );
-  const expected = "Фильм 3";
-  return expect(actual).contains(expected);
-});
+Then(
+  "user sees text film {string}",
+  { timeout: 10000 },
+  async function (string) {
+    const actual = await getText(
+      this.page,
+      "body > main > section > div > p:nth-child(1) > span"
+    );
+    const expected = await string;
+    expect(actual).contains(expected);
+  }
+);
 
 Then("user cannot buying chair taken", { timeout: 10000 }, async function () {
   expect(
