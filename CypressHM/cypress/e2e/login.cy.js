@@ -36,7 +36,7 @@ describe("login procces", () => {
   });
 });
 
-describe.only("favorites procces", () => {
+describe("favorites procces", () => {
   beforeEach(() => {
     cy.visit("/");
     cy.login("bropet@mail.ru", "123");
