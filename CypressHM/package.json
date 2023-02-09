@@ -1,0 +1,17 @@
+{
+  "name": "cypresshm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test1": "npx cypress open --browser chrome --config-file cypress.env.config.js",
+    "test2": "npx cypress run --browser chrome --config-file cypress.config.js",
+    "test3": "npx cypress open --browser edge --config-file cypress.env.config.js",
+    "test4": "npx cypress run --browser edge --config-file cypress.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.5.1"
+  }
+}
