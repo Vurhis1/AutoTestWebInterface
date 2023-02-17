@@ -1,5 +1,5 @@
 describe("API tests", () => {
-  it("creates pet", () => {
+  it("creates pet", async () => {
     cy.request({
       url: "/",
       method: "POST",
@@ -30,7 +30,7 @@ describe("API tests", () => {
     });
   });
 
-  it("put pet", () => {
+  it("put pet", async () => {
     cy.request({
       url: "/",
       method: "PUT",
@@ -61,7 +61,7 @@ describe("API tests", () => {
     });
   });
 
-  it("delete pet", () => {
+  it("delete pet", async () => {
     cy.request({
       url: "/123456",
       method: "DELETE",
