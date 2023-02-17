@@ -19,12 +19,15 @@ describe("movie selection screen", () => {
         };
       cy.visit("/");
       cy.get(".page-nav__day").eq(3).click();
-      cy.get(".movie").contains("14:00").click();
+      cy.get(".movie").contains("10:00").click();
 
       current.data.forEach((seat) => {
         cy.get(
           `.buying-scheme__wrapper > :nth-child(${seat.row}) > :nth-child(${seat.seat})`
         ).click();
+        cy.get(".acceptin-button").click();
+        cy.contains("Получить код бронирования").click();
+        cy.contains("Приятного просмотра!").should("be.visible");
       });
     });
   });

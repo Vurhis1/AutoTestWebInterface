@@ -2,28 +2,16 @@
   {
     "data": [
       {
-        "row": 4,
-        "seat": 1
-      },
-      {
-        "row": 4,
-        "seat": 2
-      },
-      {
-        "row": 4,
-        "seat": 3
+        "row": 8,
+        "seat": 7
       }
     ]
   },
   {
     "data": [
       {
-        "row": 5,
-        "seat": 1
-      },
-      {
-        "row": 5,
-        "seat": 3
+        "row": 9,
+        "seat": 8
       }
     ]
   }
