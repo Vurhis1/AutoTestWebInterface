@@ -4,7 +4,6 @@ const sets = require("../fixtures/seats.json");
 describe("movie selection screen", () => {
   it("shows schedule for 7 days", () => {
     cy.visit("/");
-
     cy.get(".page-nav__day").should("have.length", 7);
   });
 
