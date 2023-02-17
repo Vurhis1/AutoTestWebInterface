@@ -1,0 +1,42 @@
+[
+  {
+    "sad": [
+      {
+        "log": "wrong@qamid.ru",
+        "pass": "qamid"
+      }
+    ]
+  },
+  {
+    "sad": [
+      {
+        "log": "qamid@qamid.ru",
+        "pass": "wrong"
+      }
+    ]
+  },
+  {
+    "sad": [
+      {
+        "log": "",
+        "pass": "qamid"
+      }
+    ]
+  },
+  {
+    "sad": [
+      {
+        "log": "qamid@qamid.ru",
+        "pass": ""
+      }
+    ]
+  },
+  {
+    "sad": [
+      {
+        "log": "qamid",
+        "pass": "qamid"
+      }
+    ]
+  }
+]

@@ -13,7 +13,7 @@ test("Success authorization netology", async ({ page }) => {
   await expect(header).toHaveText("Мои курсы и профессии");
 
   await page.screenshot({
-    path: "image/screenshot_" + Date.now() + ".png",
+    path: "image/screenshot_" + ".png",
   });
 });
 
