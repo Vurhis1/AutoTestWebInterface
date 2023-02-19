@@ -38,3 +38,15 @@ Cypress.Commands.add("login", (email, password) => {
 
   cy.get(".login__button[type = submit]").click();
 });
+
+Cypress.Commands.add("nameInAdmin", () => {
+  cy.get(
+    "#grid-session > div > div.conf-step__seances > div:nth-child(6) > div > div > p.conf-step__seances-movie-title"
+  ).contains("Логан");
+});
+
+Cypress.Commands.add("nameInKino", () => {
+  cy.get(
+    "body > main > section:nth-child(2) > div.movie__info > div.movie__description > h2"
+  ).contains("Логан");
+});
